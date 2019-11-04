@@ -15,7 +15,7 @@ public class Stepdefs {
     }
 
     @When("I enter username {string} and password {string}")
-    public void i_enter_username_and_password(String string, String string2) {
+    public void i_enter_username_and_password(String username, String password) {
         // Write code here that turns the phrase above into concrete actions
         throw new cucumber.api.PendingException();
     }
