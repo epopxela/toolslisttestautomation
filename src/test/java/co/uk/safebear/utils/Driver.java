@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 public class Driver {
 
-    private static final String URL = System.getProperty("url", "http://toolslist.safebear.co.uk:8080");
+    private static final String URL = System.getProperty("url", "https://jobs.bristolairport.co.uk/vacancies/");
     private static final String BROWSER = System.getProperty("browser","chrome");
 
     public static String getURL(){
@@ -20,6 +20,26 @@ public class Driver {
 
 
         switch (BROWSER.toUpperCase()) {
+
+            case ("CHROME_HEADLESS"):
+                System.out.println(" Executing on CHROME HEADLESS");
+
+                chromeoptions = new ChromeOptions();
+
+                //Set Chrome to run headlessly
+                chromeoptions.addArguments("headless");
+
+                //Make sure the window size is large and maximised
+                //So nothing disappears off screen
+                //(even in headless mode!)
+                chromeoptions.addArguments("window-size=1920,1080");
+                chromeoptions.addArguments("start-maximised");
+
+                //Set up our Chromedriver
+                WebDriverManager.chromedriver().setup();
+
+                //Return the chromedriver with the chromeOptions set
+                return new ChromeDriver(chromeoptions);
 
             case "CHROME":
 
