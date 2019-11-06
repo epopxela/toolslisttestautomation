@@ -6,13 +6,13 @@ import org.openqa.selenium.By;
 @Data
 public class LoginPageLocators {
 
-    //fields
+    //fields (by xpath NOT id as per the manual)
 
-    private By usernameLocator = By.xpath("username");
-    private By passwordLocator = By.xpath("password");
+    private By usernameLocator = By.xpath (".//input[@id=\"username\"]");
+    private By passwordLocator = By.xpath(".//input[@id=\"password\"]");
 
     //buttons
-    private By Loginbutton = By.xpath("enter");
+    private By Loginbutton = By.xpath(".//button[@id=\"enter\"]");
 
     //messages
     private By failedLoginMessage = By.xpath(".//p[@id=\"rejectLogin\"]/b");
