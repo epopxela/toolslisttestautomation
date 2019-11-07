@@ -9,7 +9,7 @@ pipeline {
         string(name: 'sleep', defaultValue: '0', description: 'zero out any sleep commands')
 
     }
-    triggers { pollSCM('*****') } //poll the source code repo every minute.
+    triggers { pollSCM('* * * * *') } //poll the source code repo every minute.
 
     stages {
 
